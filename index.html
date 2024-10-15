@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respectful Relationships | Year 10 Health Assessment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Existing styles for the website */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f3f8fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+            font-size: 2em;
+            color: #05668D;
+            font-weight: 500;
+        }
+
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 900px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section-title {
+            background-color: #e7f9f5;
+            padding: 10px;
+            border-left: 5px solid #4facfe;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ol {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        ol li {
+            margin-bottom: 8px;
+        }
+
+        .help-section p {
+            margin: 15px 0;
+        }
+
+        footer a {
+            color: #05668D;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* New interactive styling */
+        button {
+            background-color: #05668D;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #00f2fe;
+        }
+
+        #consentMessage {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px solid #05668D;
+            background-color: #e7f9f5;
+            font-size: 1.1em;
+        }
+
+        #mediaMessage {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px solid #05668D;
+            background-color: #e7f9f5;
+            font-size: 1.1em;
+        }
+
+        /* New styles for improved user experience */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .quote-section {
+            border-left: 5px solid #4facfe;
+            padding-left: 15px;
+            font-style: italic;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+
+        .cta-button {
+            background-color: #00f2fe;
+            color: #05668D;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 12px 18px;
+            border: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #4facfe;
+            color: white;
+        }
+
+        .faq-section {
+            margin: 20px 0;
+            border: 1px solid #05668D;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #e7f9f5;
+        }
+
+        .faq {
+            margin-bottom: 10px;
+        }
+
+        .faq button {
+            display: block;
+            background: #4facfe;
+            color: white;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            margin: 5px 0;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #05668D;
+        }
+
+        .faq button:hover {
+            background: #00f2fe;
+        }
+
+        /* Chatbot specific styles */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            border: 2px solid #4facfe;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+        }
+
+        #chatbot-header {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #f3f8fa;
+        }
+
+        #chatbot-input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        #chatbot-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #send-btn {
+            background-color: #05668D;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #05668D;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Respectful Relationships</h1>
+        <p>Your Guide to Healthy and Respectful Interactions</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <div class="section-title">Main Message</div>
+            <p><strong>“The Enthusiastic Yes”</strong> is a phrase that highlights the importance of clear and
+                affirmative consent in all interactions. Consent should be given freely, be reversible, informed,
+                enthusiastic, and specific (FRIES). These principles lay the foundation for healthy, respectful
+                relationships, where communication and mutual understanding are at the core.</p>
+        </section>
+
+        <section>
+            <div class="section-title">Signs of a Healthy Relationship</div>
+            <ul>
+                <li><strong>Open Communication -</strong> Partners are able to discuss feelings, needs, and concerns
+                    without fear of judgment or dismissal.</li>
+                <li><strong>Mutual Respect -</strong> Each person respects the other's boundaries, values their
+                    opinions, and shows appreciation.</li>
+                <li><strong>Trust and Honesty -</strong> Trust is foundational in healthy relationships. This includes
+                    being honest about your thoughts and feelings.</li>
+                <li><strong>Equality -</strong> Both partners contribute equally to the relationship, share
+                    responsibilities, and make decisions together.</li>
+                <li><strong>Conflict Resolution -</strong> Disagreements happen, but how you handle them is key.
+                    Partners address conflicts without name-calling or blame-shifting.</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="section-title">Signs of an Unhealthy Relationship</div>
+            <ul>
+                <li><strong>Lack of Communication -</strong> Problems are often avoided or left unresolved, leading to
+                    emotional distance.</li>
+                <li><strong>Controlling Behaviour -</strong> One partner tries to exert power over the other by
+                    controlling actions, decisions, or friendships.</li>
+                <li><strong>Disrespect -</strong> One partner may belittle or demean the other, eroding self-esteem.
+                </li>
+                <li><strong>Dishonesty -</strong> Secrets, lies, or deceit break down trust and can damage the
+                    relationship.</li>
+                <li><strong>Abuse -</strong> Any form of abuse—physical, emotional, or verbal—is unacceptable and a
+                    clear sign to leave.</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="section-title">Setting Boundaries</div>
+            <p>Setting personal boundaries is crucial in any relationship. Healthy boundaries are essential for
+                maintaining your emotional well-being and self-respect. Here are some tips for setting boundaries:</p>
+            <ol>
+                <li>Identify your needs and desires.</li>
+                <li>Communicate your boundaries clearly and assertively.</li>
+                <li>Be prepared to stand firm in your boundaries.</li>
+                <li>Respect others' boundaries as well.</li>
+            </ol>
+        </section>
+
+        <section>
+            <div class="section-title">Understanding Consent</div>
+            <p>Consent is an agreement between participants to engage in an activity. Here are key points to keep in
+                mind:</p>
+            <ol>
+                <li>Consent must be clear, coherent, willing, and ongoing.</li>
+                <li>Anyone can withdraw consent at any time.</li>
+                <li>Consent cannot be given if someone is incapacitated, coerced, or threatened.</li>
+                <li>Consent is specific; just because someone consents to one activity doesn't mean they consent to
+                    another.</li>
+            </ol>
+        </section>
+
+        <section>
+            <div class="section-title">Help-Seeking Strategies</div>
+            <p>If you or someone you know is experiencing an unhealthy relationship, it’s important to seek help. Here
+                are some strategies:</p>
+            <ul>
+                <li>Talk to a trusted friend or family member.</li>
+                <li>Seek support from a counselor or psychologist.</li>
+                <li>Contact local organizations that specialize in relationship support.</li>
+                <li>Educate yourself about healthy relationships through resources and workshops.</li>
+            </ul>
+        </section>
+
+        <!-- New interactive elements -->
+        <section class="faq-section">
+            <div class="section-title">Frequently Asked Questions</div>
+            <div class="faq">
+                <button onclick="toggleFAQ('faq1')">What is consent?</button>
+                <div id="faq1" class="faq-answer">Consent is a mutual agreement between participants to engage in a
+                    specific activity.</div>
+            </div>
+            <div class="faq">
+                <button onclick="toggleFAQ('faq2')">How can I set boundaries?</button>
+                <div id="faq2" class="faq-answer">You can set boundaries by clearly communicating your needs and being
+                    assertive.</div>
+            </div>
+            <div class="faq">
+                <button onclick="toggleFAQ('faq3')">What should I do if I’m in an unhealthy relationship?</button>
+                <div id="faq3" class="faq-answer">Seek help from trusted individuals or professional support services.
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <p>“Respect is earned, honesty is appreciated, trust is gained, and loyalty is returned.”</p>
+        </section>
+
+        <section class="help-section">
+            <div class="section-title">Need Support?</div>
+            <p>If you or someone you know needs help, reach out to support services in your area. You are not alone,
+                and support is available.</p>
+            <button onclick="showConsentMessage()">Learn about Consent</button>
+            <div id="consentMessage">Consent is crucial in relationships. Always communicate openly.</div>
+            <button onclick="showMediaMessage()">Learn about Media Influence</button>
+            <div id="mediaMessage">Media can shape perceptions of relationships; stay informed and critical.</div>
+        </section>
+
+        <section>
+            <div class="section-title">References</div>
+            <ul>
+                <li>Australian Council on Children and the Media. (2018). <i>Media and children: Understanding the
+                        effects.</i> Retrieved from <a
+                        href="https://childrenandmedia.org.au/resources/fact-sheets/media-and-children"
+                        target="_blank">https://childrenandmedia.org.au/resources/fact-sheets/media-and-children</a>
+                </li>
+                <li>Australian Government Department of Education. (2019). <i>Consent and sexual relationships.</i>
+                    Retrieved from <a href="https://www.education.gov.au/student-resilience-and-wellbeing"
+                        target="_blank">https://www.education.gov.au/student-resilience-and-wellbeing</a></li>
+                <li>Australian Institute of Family Studies. (2020). <i>Understanding consent.</i> Retrieved from <a
+                        href="https://aifs.gov.au/resources/practice-guides/understanding-consent"
+                        target="_blank">https://aifs.gov.au/resources/practice-guides/understanding-consent</a></li>
+                <li>Australian Medical Association. (2020). <i>Health impacts of sexualisation in media.</i> Retrieved
+                    from <a href="https://www.ama.com.au/position-statement/body-image-and-health-2002-revised-2009"
+                        target="_blank">https://www.ama.com.au/position-statement/body-image-and-health-2002-revised-2009</a>
+                </li>
+                <li>Beyond Blue. (2019). <i>The importance of mental health in relationships.</i> Retrieved from <a
+                        href="https://www.beyondblue.org.au/personal-best/pillar/supporting-others/the-importance-of-connection-and-relationships-for-mental-health"
+                        target="_blank">https://www.beyondblue.org.au/personal-best/pillar/supporting-others/the-importance-of-connection-and-relationships-for-mental-health</a>
+                </li>
+                <li>Commonwealth of Australia. (2021). <i>Sexualisation of children in the media.</i> Retrieved from <a
+                        href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Environment_and_Communications/Sexualisationofchildren/Report"
+                        target="_blank">https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Environment_and_Communications/Sexualisationofchildren/Report</a>
+                </li>
+                <li>Headspace. (2021). <i>Healthy relationships: Tips for young people.</i> Retrieved from <a
+                        href="https://headspace.org.au/young-people/understanding-and-dealing-with-relationship-issues/"
+                        target="_blank">https://headspace.org.au/young-people/understanding-and-dealing-with-relationship-issues/</a>
+                </li>
+                <li>Kids Helpline. (2021). <i>Coping with bullying and relationship issues.</i> Retrieved from <a
+                        href="https://kidshelpline.com.au/teens/issues/bullying"
+                        target="_blank">https://kidshelpline.com.au/teens/issues/bullying</a></li>
+                <li>La Trobe University. (2021). <i>The role of media in shaping young people's understanding of
+                        relationships.</i> Retrieved from <a
+                        href="https://www.latrobe.edu.au/news/articles/2021/release/young-people-turn-to-pornography-for-education"
+                        target="_blank">https://www.latrobe.edu.au/news/articles/2021/release/young-people-turn-to-pornography-for-education</a>
+                </li>
+                <li>Lifeline Australia. (2020). <i>Understanding relationships and mental health.</i> Retrieved from <a
+                        href="https://www.lifeline.org.au/crisis-support/"
+                        target="_blank">https://www.lifeline.org.au/crisis-support/</a></li>
+                <li>Office of the eSafety Commissioner. (2020). <i>Online safety and youth.</i> Retrieved from <a
+                        href="https://www.esafety.gov.au/young-people"
+                        target="_blank">https://www.esafety.gov.au/young-people</a></li>
+                <li>UNESCO. (2019). <i>International technical guidance on sexuality education.</i> Retrieved from <a
+                        href="https://unesdoc.unesco.org/ark:/48223/pf0000260770"
+                        target="_blank">https://unesdoc.unesco.org/ark:/48223/pf0000260770</a></li>
+                <li>Victorian Government. (2018). <i>Respectful relationships: A whole school approach.</i> Retrieved
+                    from <a
+                        href="https://www.education.vic.gov.au/school/teachers/teachingresources/discipline/capabilities/personal/Pages/respectfulrel.aspx"
+                        target="_blank">https://www.education.vic.gov.au/school/teachers/teachingresources/discipline/capabilities/personal/Pages/respectfulrel.aspx</a>
+                </li>
+                <li>World Health Organization. (2018). <i>Understanding and addressing violence against women.</i>
+                    Retrieved from <a href="https://www.who.int/reproductivehealth/topics/violence/vaw_series/en/"
+                        target="_blank">https://www.who.int/reproductivehealth/topics/violence/vaw_series/en/</a></li>
+                <li>Yam, K. (2019). <i>The impact of media on self-image and body positivity.</i> Retrieved from <a
+                        href="https://www.verywellmind.com/media-and-body-image-1030892"
+                        target="_blank">https://www.verywellmind.com/media-and-body-image-1030892</a></li>
+                    </section>
+
+                    <div id="chatbot-container">
+                        <div id="chatbot-header">
+                            Ask the AI
+                        </div>
+                        <div id="chatbot-messages">
+                            <!-- Messages will be appended here -->
+                        </div>
+                        <div id="chatbot-input-container">
+                            <input type="text" id="chatbot-input" placeholder="Type your message here...">
+                            <button id="send-btn">Send</button>
+                        </div>
+                    </div>
+            
+                    <button id="chatbot-toggle">💬</button>
+                </div>
+            
+                <footer>
+                    <p>&copy; 2024 Health Consent Website - Bob Hawke College. All Rights Reserved.</p>
+                </footer>
+            
+                <script>
+                    // Replace this with your actual Hugging Face API token
+                    const apiKey = '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';
+                    
+                    // Toggle chatbot visibility
+                    document.getElementById('chatbot-toggle').addEventListener('click', function () {
+                        const chatbotContainer = document.getElementById('chatbot-container');
+                        chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
+                    });
+                
+                    // Send message to Hugging Face API for GPT-Neo and get a response
+                    async function sendMessage(message) {
+                        const url = 'https://api-inference.huggingface.co/models/gpt2';  // GPT-J model
+                
+                        try {
+                            const response = await fetch(url, {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': `Bearer ${apiKey}`,
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    inputs: message,
+                                    parameters: {
+                                        max_new_tokens: 150,
+                                        do_sample: true,
+                                        temperature: 0.7
+                                    }
+                                })
+                            });
+                
+                            if (!response.ok) {
+                                console.error(`Error: ${response.status} - ${response.statusText}`);
+                                if (response.status === 403) {
+                                    return 'Access to the model is forbidden. Please check your API key or model permissions.';
+                                }
+                                return 'There was an issue with the request. Please try again.';
+                            }
+                
+                            const data = await response.json();
+                            return data[0].generated_text.trim();
+                
+                        } catch (error) {
+                            console.error('Error during API request:', error);
+                            return 'An error occurred while communicating with the AI.';
+                        }
+                    }
+                
+                    // Add message to chat
+                    function addMessageToChat(message, isUser = false) {
+                        const messageContainer = document.createElement('div');
+                        messageContainer.style.margin = '5px 0';
+                        messageContainer.style.padding = '10px';
+                        messageContainer.style.borderRadius = '10px';
+                        messageContainer.style.backgroundColor = isUser ? '#4facfe' : '#f3f8fa';
+                        messageContainer.style.color = isUser ? 'white' : '#333';
+                        messageContainer.style.textAlign = isUser ? 'right' : 'left';
+                        messageContainer.style.wordWrap = 'break-word'; // Ensure long text wraps
+                        document.getElementById('chatbot-messages').appendChild(messageContainer);
+                        messageContainer.innerText = message;
+                
+                        // Scroll to the latest message
+                        document.getElementById('chatbot-messages').scrollTop = document.getElementById('chatbot-messages').scrollHeight;
+                    }
+                
+                    // Handle sending message
+                    document.getElementById('send-btn').addEventListener('click', async function () {
+                        const userInput = document.getElementById('chatbot-input').value.trim();
+                        if (!userInput) return;
+                
+                        addMessageToChat(userInput, true); // Show user input
+                        document.getElementById('chatbot-input').value = ''; // Clear input field
+                
+                        const aiResponse = await sendMessage(userInput);
+                        addMessageToChat(aiResponse, false); // Show AI's response
+                    });
+                
+                    // Allow sending message on pressing Enter key
+                    document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
+                        if (e.key === 'Enter') {
+                            document.getElementById('send-btn').click();
+                        }
+                    });
+                </script>
+                
